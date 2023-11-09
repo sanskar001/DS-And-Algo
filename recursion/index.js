@@ -40,3 +40,40 @@ Note: When we write recursive functions, we keep pushing new functions onto the 
 - Base Case
 - Different Input
 */
+
+/* Where things go wrong
+
+- No base case
+- Forgetting to return or returning the wrong thing
+- Callstack overflow
+*/
+
+function countDown(num) {
+  if (num <= 0) {
+    console.log("DONE!");
+    return;
+  }
+
+  console.log(num);
+  num--;
+  countDown(num);
+}
+
+// Testing:
+
+// countDown(5);
+
+// countDown(5) > countDown(4) > countDown(3) > countDown(2) > countDown(1) > countDown(0)
+
+function sumRange(num) {
+  if (num === 0) {
+    return 0;
+  }
+
+  return num + sumRange(num - 1);
+}
+
+// Testing
+
+// console.log(sumRange(5));
+// console.log(sumRange(10));
