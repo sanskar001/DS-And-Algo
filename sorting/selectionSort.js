@@ -4,6 +4,9 @@
 
  Time complexity - O(n^2) and Space complexity - O(1)
 
+ Note: In compare to bubble sort, selection sort is better because we are doing swapping at the end of outer loop,
+       But in bubble sort we are doing swap in inner loop.
+
 */
 
 function selectionSort(arr) {
