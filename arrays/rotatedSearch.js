@@ -15,16 +15,16 @@ Input : arr[] = {30, 40, 50, 10, 20}, key = 10
 Output : Found at index 3
 */
 
-function binarySearch(arr, target) {
+function findPivot(arr) {
   let left = 0;
   let right = arr.length - 1;
 
   while (left <= right) {
     const mid = Math.floor((left + right) / 2);
 
-    if (arr[mid] === target) {
+    if (arr[mid - 1] > arr[mid]) {
       return mid;
-    } else if (arr[mid] < target) {
+    } else if (arr[left] < arr[right]) {
       left = mid + 1;
     } else {
       right = mid - 1;
@@ -34,4 +34,4 @@ function binarySearch(arr, target) {
   return -1;
 }
 
-console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 8));
+console.log(findPivot([5, 6, 7, 8, 9, 10, 1, 2, 3], 8));
