@@ -25,6 +25,8 @@ appearing 2nd time consecutively.
 
 */
 
+// Time complexity - O(n) and Space complexity - O(1)
+
 function removeConsecutiveCharcter(str) {
   if (str.length === 1) {
     return str;
