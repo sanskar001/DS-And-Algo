@@ -51,22 +51,22 @@ Bonus: You must do this with constant or O(1) space and O(n) time.
 //   return uniqueCount;
 // }
 
-// function countUniqueValues(arr) {
-//   if (!arr.length) {
-//     return 0;
-//   }
+function countUniqueValues(arr) {
+  if (!arr.length) {
+    return 0;
+  }
 
-//   let uniqueCount = 1;
+  let uniqueCount = 1;
 
-//   for (let j = 0, i = 0; i < arr.length; i++) {
-//     if (arr[i] !== arr[j]) {
-//       j = i;
-//       uniqueCount++;
-//     }
-//   }
+  for (let j = 0, i = 0; i < arr.length; i++) {
+    if (arr[i] !== arr[j]) {
+      j = i;
+      uniqueCount++;
+    }
+  }
 
-//   return uniqueCount;
-// }
+  return uniqueCount;
+}
 
 // -----------------------------------------------------
 
