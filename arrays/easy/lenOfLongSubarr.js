@@ -67,10 +67,54 @@ function lenOfLongSubarr(arr, n, k) {
   return maxLen;
 }
 
-function makeArrFromStr(str) {
-  return str.split(" ").map((val) => +val);
+// ==================================================================
+
+/*
+Longest Subarray with sum K | [Postives and Negatives]
+
+Problem Statement: Given an array and a sum k, we need to print the length of the longest subarray that sums to k.
+
+Input: arr[] = {-5, 8, -14, 2, 4, 12}, k = -5
+Output: 5
+
+*/
+
+function lenOfLongSubarr(arr, n, k) {
+  let sum = 0;
+
+  for (let p = 0; p < n; p++) {
+    sum += arr[p];
+  }
+
+  if (sum === k) {
+    return n;
+  } else {
+    let left = 0;
+    let right = n - 1;
+
+    while (left <= right) {
+      let leftDiff = sum - arr[left];
+      let rightDiff = sum - arr[right];
+
+      if (leftDiff > rightDiff) {
+        sum = sum - arr[right];
+        right--;
+      } else {
+        sum = sum - arr[left];
+        left++;
+      }
+
+      if (sum === k) {
+        return right - left + 1;
+      }
+    }
+  }
+
+  return 0;
 }
 
 console.log(lenOfLongSubarr([2, 3, 5], 3, 5)); // 2
 console.log(lenOfLongSubarr([2, 3, 5, 1, 9], 5, 10)); // 3
 console.log(lenOfLongSubarr([10, 5, 2, 7, 1, 9], 6, 15)); // 4
+console.log(lenOfLongSubarr([-5, 8, -14, 2, 4, 12], 6, -5)); // 5
+console.log(lenOfLongSubarr([-1, 1, 1], 3, 1)); // 3
