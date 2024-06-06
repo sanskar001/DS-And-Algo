@@ -24,6 +24,8 @@ Since an empty string reads the same forward and backward, it is a palindrome.
  
 */
 
+// Time complexity - O(n) and Space complexity - O(1)
+
 function isPalindrome(str) {
   const rawString = str.replace(/[^a-z0-9]/gi, "").toLowerCase();
 
