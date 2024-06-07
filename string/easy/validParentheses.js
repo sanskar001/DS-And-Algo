@@ -25,6 +25,8 @@ Output: false
 
 */
 
+// TIME COMPLEXITY - O(N) AND SPACE COMPLEXITY - O(N)
+
 function validParentheses(str) {
   if (str.length % 2 !== 0) {
     return false;
