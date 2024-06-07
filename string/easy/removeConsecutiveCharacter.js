@@ -25,23 +25,22 @@ appearing 2nd time consecutively.
 
 */
 
-// Time complexity - O(n) and Space complexity - O(1)
+// Remove Consecutive Characters
+
+// TIME COMPLEXITY - O(N) & SPACE COMPLEXITY - O(N)
 
 function removeConsecutiveCharcter(str) {
-  if (str.length === 1) {
-    return str;
-  }
+  let result = "";
 
-  const strArr = [];
-
-  for (let char of str) {
-    if (char !== strArr[strArr.length - 1]) {
-      strArr.push(char);
+  for (let l of str) {
+    if (result[result.length - 1] !== l) {
+      result += l;
     }
   }
 
-  return strArr.join("");
+  return result;
 }
+
 
 // ---------------------------------------------
 
