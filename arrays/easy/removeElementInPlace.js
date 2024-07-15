@@ -40,6 +40,14 @@ var removeElement = function (nums, val) {
     j++;
   }
 
+  // Replace rest of last elements with underscore.
+  let k = i;
+
+  while (k < nums.length) {
+    nums[k] = "_";
+    k++;
+  }
+
   console.log({ nums });
   return i;
 };
