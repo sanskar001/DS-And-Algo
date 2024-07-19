@@ -3,22 +3,22 @@
 // Time complexity - O(N) and Aux Space complexity - O(1)
 
 var validMountainArray = function (arr) {
-  let pickPoint = 0;
+  let peakPoint = 0;
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i + 1] === arr[i]) {
       return false;
     } else if (arr[i + 1] < arr[i]) {
-      pickPoint = i;
+      peakPoint = i;
       break;
     }
   }
 
-  if (pickPoint < 1) {
+  if (peakPoint < 1) {
     return false;
   }
 
-  for (let i = pickPoint; i < arr.length; i++) {
+  for (let i = peakPoint; i < arr.length; i++) {
     if (arr[i + 1] >= arr[i]) {
       return false;
     }
